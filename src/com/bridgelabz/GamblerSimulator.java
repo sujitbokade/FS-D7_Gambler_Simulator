@@ -20,10 +20,14 @@ public class GamblerSimulator {
         System.out.println("Daily Stake = "+DAILY_STAKE);
     }
 
-         static void resignDayCheck(){
-          while (DAILY_STAKE<150 && DAILY_STAKE>50){
-              winCheck();
-          }
+         static void resignDayCheck() {
+             for (int day = 1; day <= 20; day++) {
+                 System.out.println("Day :"+day);
+                 while (DAILY_STAKE < 150 && DAILY_STAKE > 50) {
+                     winCheck();
+                 }
+             }
+             System.out.println("Total money after 20 days "+DAILY_STAKE);
          }
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator!");
