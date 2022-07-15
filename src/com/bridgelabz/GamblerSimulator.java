@@ -15,6 +15,7 @@ public class GamblerSimulator {
     static int totalStake;
     static int maxWin=0;
     static int maxLost=0;
+    static int totalAmount;
 
     static void winCheck() {
         int result = (int) (Math.random() * 10) % 2;
@@ -56,11 +57,22 @@ public class GamblerSimulator {
             System.out.println("No of Days Lost " + daysLost);
             System.out.println("lucky day is "+luckyDay);
             System.out.println("unlucky day is "+unluckyDay);
+            System.out.println();
 
+    }
+    static void eligibiltyCheck(){
+        totalAmount=totalAmountWon+totalAmountLost;
+        if(totalAmount>=100){
+            System.out.println("You are in Profit,Continue for Next Month");
+        }
+        else {
+            System.out.println("You are in Loss,Not Eligible for Next Month");
+        }
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator!");
         maxWinLostCheck();
+        eligibiltyCheck();
     }
 }
